@@ -2,8 +2,10 @@ package com.example.estrenoscine.Activities.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +20,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.estrenoscine.Activities.Objects.DateDialog;
 import com.example.estrenoscine.R;
@@ -32,8 +35,9 @@ public class AñadirPeliculaActivity extends AppCompatActivity {
     private int age;
     private DateDialog dateDialog;
     private Button selectDate;
+    private AlertDialog.Builder dlgAlert;
+    private boolean flagExit = false;
     public TextView dateSelected;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +101,23 @@ public class AñadirPeliculaActivity extends AppCompatActivity {
 
             }
         });
+
+        dlgAlert = new AlertDialog.Builder(this);
+        dlgAlert.setMessage("¿Seguro que quieres añadir la pelicula?");
+        dlgAlert.setTitle("Añadir pelicula");
+        dlgAlert.setCancelable(true);
+        dlgAlert.setPositiveButton("Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        flagExit = true;
+                    }
+                });
+        dlgAlert.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        flagExit = false;
+                    }
+                });
     }
 
     public void setDate(String date){
@@ -105,15 +126,31 @@ public class AñadirPeliculaActivity extends AppCompatActivity {
 
 
     public void setResult(){
-        Intent intent = new Intent();
-        intent.putExtra("title",etTitle.getText().toString());
-        intent.putExtra("director",etDirector.getText().toString());
-        intent.putExtra("duration",Integer.parseInt(etDuration.getText().toString()));
-        intent.putExtra("age",age);
-        intent.putExtra("date",date);
-        intent.putExtra("room",room);
-        this.setResult(RESULT_OK,intent);
-        finish();
+        dlgAlert.create().show();
+
+
+        try {
+            if (flagExit) {
+                Intent intent = new Intent();
+                intent.putExtra("title", etTitle.getText().toString());
+                intent.putExtra("director", etDirector.getText().toString());
+                intent.putExtra("duration", Integer.parseInt(etDuration.getText().toString()));
+                intent.putExtra("age", age);
+                intent.putExtra("date", date);
+                intent.putExtra("room", room);
+                this.setResult(RESULT_OK, intent);
+                finish();
+            }
+        }catch (NumberFormatException e){
+            Toast.makeText(getApplicationContext(),"Campo numérico de forma incorrecta", Toast.LENGTH_SHORT).show();
+        }
+        catch (IllegalArgumentException e){
+            Toast.makeText(getApplicationContext(),"Campos rellenados de forma incorrecta", Toast.LENGTH_SHORT).show();
+        }
+        catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Error no esperado", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
