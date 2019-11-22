@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorListBackround">
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="175dp"
+            android:layout_marginRight="175dp"
+            android:text="TextView"
+            android:textColor="@color/colorTextSecundary"
+            app:layout_constraintEnd_toStartOf="@+id/age"
+            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintStart_toStartOf="@+id/coverComplete"
+            app:layout_constraintTop_toBottomOf="@+id/coverComplete" />
+
+        <ImageView
+            android:id="@+id/coverComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/d2001" />
+
+        <TextView
+            android:id="@+id/room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="175dp"
+            android:layout_marginRight="175dp"
+            android:text="TextView"
+            android:textColor="@color/colorTextSecundary"
+            app:layout_constraintEnd_toStartOf="@+id/age"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/duration"
+            app:layout_constraintTop_toBottomOf="@+id/duration" />
+
+        <ImageView
+            android:id="@+id/ageComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/room"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/duration"
+            app:layout_constraintTop_toTopOf="@+id/room"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/g" />
+
+        <TextView
+            android:id="@+id/movieComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/colorTextPrincipal"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/coverComplete"
+            app:layout_constraintTop_toTopOf="@+id/coverComplete" />
+
+        <TextView
+            android:id="@+id/directorComplete"
+            android:layout_width="136dp"
+            android:layout_height="20dp"
+            android:text="TextView"
+            android:textColor="@color/colorTextSecundary"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/coverComplete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toEndOf="@+id/coverComplete"
+            app:layout_constraintTop_toBottomOf="@+id/movieComplete"
+            app:layout_constraintVertical_bias="0.314" />
+
+        <ImageView
+            android:id="@+id/favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/ageComplete"
+            app:layout_constraintEnd_toEndOf="@+id/ageComplete"
+            app:layout_constraintHorizontal_bias="0.525"
+            app:layout_constraintStart_toStartOf="@+id/ageComplete" />
+
+        <TextView
+            android:id="@+id/dateLaunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/colorTextSecundary"
+            app:layout_constraintBottom_toBottomOf="@+id/room"
+            app:layout_constraintEnd_toStartOf="@+id/ageComplete"
+            app:layout_constraintStart_toEndOf="@+id/room"
+            app:layout_constraintTop_toTopOf="@+id/room" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/colorDivider" />
+
+</LinearLayout>

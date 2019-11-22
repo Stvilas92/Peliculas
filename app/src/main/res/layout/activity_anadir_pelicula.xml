@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDivider"
+    tools:context=".Activities.Activities.AñadirPeliculaActivity">
+
+    <TextView
+        android:id="@+id/addDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Duración"
+        android:textColor="@color/colorTextPrincipal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/addRoom"
+        app:layout_constraintTop_toBottomOf="@+id/addRoom" />
+
+    <EditText
+        android:id="@+id/etAddDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/addDuration"
+        app:layout_constraintStart_toStartOf="@+id/spinnerCinemaRooms"
+        app:layout_constraintTop_toTopOf="@+id/addDuration" />
+
+    <TextView
+        android:id="@+id/addTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Título"
+        android:textColor="@color/colorTextPrincipal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/addDirector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Director"
+        android:textColor="@color/colorTextPrincipal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/addTitle"
+        app:layout_constraintTop_toBottomOf="@+id/addTitle" />
+
+    <EditText
+        android:id="@+id/etAddMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/addTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addTitle"
+        app:layout_constraintTop_toTopOf="@+id/addTitle" />
+
+    <EditText
+        android:id="@+id/etAddDirector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/addDirector"
+        app:layout_constraintStart_toStartOf="@+id/etAddMovie"
+        app:layout_constraintTop_toTopOf="@+id/addDirector" />
+
+    <Spinner
+        android:id="@+id/spinnerCinemaRooms"
+        android:layout_width="187dp"
+        android:layout_height="34dp"
+        app:layout_constraintBottom_toBottomOf="@+id/addRoom"
+        app:layout_constraintStart_toStartOf="@+id/etAddDirector"
+        app:layout_constraintTop_toTopOf="@+id/addRoom"
+        app:layout_constraintVertical_bias="0.147"></Spinner>
+
+    <TextView
+        android:id="@+id/addRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Sala"
+        android:textColor="@color/colorTextPrincipal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/addDirector"
+        app:layout_constraintTop_toBottomOf="@+id/addDirector" />
+
+    <TextView
+        android:id="@+id/addAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Edad permitida"
+        android:textColor="@color/colorTextPrincipal"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAddDuration" />
+
+    <RadioGroup
+        android:id="@+id/grAddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/addDate"
+        app:layout_constraintEnd_toEndOf="@+id/addAge"
+        app:layout_constraintStart_toStartOf="@+id/addAge"
+        app:layout_constraintTop_toBottomOf="@+id/addAge">
+
+        <RadioButton
+            android:id="@+id/rbAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Todos los publicos"
+            android:textColor="@color/colorTextPrincipal" />
+
+        <RadioButton
+            android:id="@+id/rb10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mayores de 10 años"
+            android:textColor="@color/colorTextPrincipal" />
+
+        <RadioButton
+            android:id="@+id/rb13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mayores de 13 años"
+            android:textColor="@color/colorTextPrincipal" />
+
+        <RadioButton
+            android:id="@+id/rb17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mayores de 17 años"
+            android:textColor="@color/colorTextPrincipal" />
+
+        <RadioButton
+            android:id="@+id/rb18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mayores de 18 años"
+            android:textColor="@color/colorTextPrincipal" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Añadir pelicula"
+        android:textColor="@color/colorTextPrincipal"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/addDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="212dp"
+        android:text="Fecha de estreno"
+        android:textColor="@color/colorTextPrincipal"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/addAge"
+        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintStart_toStartOf="@+id/addAge"
+        app:layout_constraintTop_toBottomOf="@+id/addAge" />
+
+    <TextView
+        android:id="@+id/dateSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Niguna fecha seleccionada"
+        android:textColor="@color/colorTextPrincipal"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/selectDate"
+        app:layout_constraintStart_toStartOf="@+id/addDuration"
+        app:layout_constraintTop_toTopOf="@+id/selectDate" />
+
+    <Button
+        android:id="@+id/selectDate"
+        android:layout_width="121dp"
+        android:layout_height="54dp"
+        android:maxLines="2"
+        android:text="Seleccionar fecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/grAddBtn"
+        app:layout_constraintTop_toBottomOf="@+id/addDate"
+        app:layout_constraintVertical_bias="0.06999999" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
